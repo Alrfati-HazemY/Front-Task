@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import { LoginCtx } from "../../context/LoginContex";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Box from "@material-ui/core/Box";
-import { LoginCtx } from "../../context/LoginContex";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     textDecoration: "none",
     transition : "all 0.2s",
-    fontSize: "30px",
+    fontSize: "29px",
     "&:hover": {
       color: "#ff8120",
     },
