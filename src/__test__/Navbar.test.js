@@ -1,29 +1,18 @@
-import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
-import { Navbar } from '../components/Navbar/Navbar';
+import { render, screen , fireEvent } from "@testing-library/react"
+import React from 'react'
+import {Navbar} from "./../views/Navbar/Navbar"
+import "@testing-library/jest-dom"
+import {createMemoryHistory} from 'history';
+import { BrowserRouter } from "react-router-dom"
+import userEvent from '@testing-library/react'
 
-describe("Navbar", () => {
-    it('Should show logout if the user is logged in', () => {
-        render(
-            <BrowserRouter>
-                <Navbar loggedIn={true} />
-            </BrowserRouter>
-        );
-            const logoutBtn = screen.getByText(/logout/i);
-            expect(logoutBtn).toBeInTheDocument();
-    });
+describe("Navbar Component" , () => {
+    it("show menu function" , () => {
+        const {debug} = render (<BrowserRouter><Navbar/></BrowserRouter>)
+        const showMenu = jest.fn();
+        const iconBtn = screen.getByTestId("icon-btn");
+        expect(iconBtn).toBeInTheDocument();
+        fireEvent.click(iconBtn);
 
-    it('Should show login & signup if the user is not logged in', () => {
-        render(
-            <BrowserRouter>
-                <Navbar loggedIn={false} />
-            </BrowserRouter>
-        );
-            const signupBtn = screen.getByText(/signup/i);
-            const loginBtn = screen.getByText(/login/i);
-            expect(signupBtn).toBeInTheDocument();
-            expect(loginBtn).toBeInTheDocument();
-    });
-
+    })
 })

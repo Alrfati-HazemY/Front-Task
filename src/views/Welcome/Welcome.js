@@ -40,7 +40,8 @@ export const Welcome = () => {
       <Typography
         className={classes.text}
         data-heading="WELCOME"
-        onClick = {()=>{navigate("/login")}}
+        data-testid="welcome"
+        onClick = { ()=>{navigate("/login")} }
       >
         WELCOME
       </Typography>

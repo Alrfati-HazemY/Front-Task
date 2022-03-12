@@ -180,6 +180,7 @@ export const Login = (props) => {
           className={classes.login_btn}
           variant="contained"
           color="primary"
+          data-testid="loginBtn"
         >
           Login
         </Button>

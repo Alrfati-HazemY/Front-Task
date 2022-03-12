@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes , Route } from "react-router-dom";
 import { Navbar } from "./views/Navbar/Navbar";
-import { Login } from "./views/Loign/Login"
+import { Login } from "./views/Login/Login"
 import { Signup } from "./views/Signup/Signup";
 import { Welcome } from "./views/Welcome/Welcome";
 import { PostsList } from "./views/Posts/PostsList";

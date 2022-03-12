@@ -111,8 +111,6 @@ export const Signup = (props) => {
       InputCheck(password) ||
       InputCheck(cPassword)
     ) {
-      alert("Please fill in all inputs");
-      return false;
     } else {
       let status = false;
       if (!regexName.test(name)) {
@@ -184,6 +182,7 @@ export const Signup = (props) => {
             value={name}
             className={classes.login_form_input}
             label="Full Name"
+            inputProps={{ "data-testid": "full-name" }}
             InputLabelProps={{ style: { color: "#ddd" } }}
             autoComplete = "off"
           />
@@ -238,6 +237,7 @@ export const Signup = (props) => {
           <Box className={classes.error}>{errors.eCPassword}</Box>
         </Box>
         <Button
+          data-testid="submit"
           onClick={RegisterSubmitHandler}
           className={classes.login_btn}
           variant="contained"

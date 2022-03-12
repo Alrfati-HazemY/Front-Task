@@ -110,7 +110,7 @@ export const Navbar = (props) => {
             Home
           </Link>
           {loggedIn ? (
-            <Link className={classes.link} to="/login" onClick={logoutHandler}>
+            <Link data-testid = "logout" className={classes.link} to="/login" onClick={logoutHandler}>
               Logout
             </Link>
           ) : (
@@ -130,6 +130,7 @@ export const Navbar = (props) => {
           color="inherit"
           aria-label="menu"
           onClick={showMenu}
+          data-testid = "icon-btn"
         >
           <MenuIcon />
         </IconButton>
